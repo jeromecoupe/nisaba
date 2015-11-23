@@ -1,0 +1,104 @@
+// -------------------------------------
+// =pagefooter
+// -------------------------------------
+
+.pagefooter
+{
+  background-color: $color-brand-main4;
+  padding: 3em 0;
+  border-radius: 0 0 0.25em 0.25em;
+}
+
+// -------------------------------------
+// =footer navigation
+// -------------------------------------
+
+/**
+ * Stacked at small size
+ * Hosrizontal nav for medium screens and up
+ */
+
+.footernav
+{
+  list-style: none;
+  margin: 3em 0;
+  padding: 0;
+
+  @include mq(medium)
+  {
+    margin: 0;
+    float: left;
+  }
+}
+
+.footernav__item
+{
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  &:last-child
+  {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  @include mq(medium)
+  {
+    display: inline-block;
+    margin-right: 1.5em;
+    border: none;
+
+    &:last-child
+    {
+      margin-right: 0;
+      border: none;
+    }
+  }
+}
+
+.footernav__item > a
+{
+  display: block;
+  padding: 1.5em 0;
+
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 12/16 * 1rem;
+  line-height: 1;
+  font-family: $fontstack-main;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: url(../img/bkg_footernav_arrow.svg) 100% 50% no-repeat;
+  color: #fff;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover
+  {
+    color: $color-brand-main2;
+  }
+
+  @include mq(medium)
+  {
+    padding: 1em 0;
+  }
+}
+
+// -------------------------------------
+// =footer copyright
+// -------------------------------------
+
+.footercopy
+{
+  margin: 1em 0;
+  padding: 0;
+  float: right;
+
+  font-weight: 400;
+  font-size: 12px;
+  font-size: 12/16 * 1rem;
+  line-height: 1;
+  font-family: $fontstack-main;
+
+  color: $color-brand-main1;
+}

@@ -1,0 +1,41 @@
+// -------------------------------------
+// =layout main
+// -------------------------------------
+
+/**
+ * Layout in horizontal slices in a "page"
+ *
+ * .page: creates a visual page at large screen sizes
+ * .pagecontent: creates the gradient under the header
+ * .content-module: creastes the full width color bleeds (variants for colors)
+ * .container is centering things and uses max-width to contrain content
+ */
+
+.page
+{
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1500px;
+  background: #fff;
+
+  @include mq(xxlarge)
+  {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 0.25em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.pagecontent
+{
+  padding: 4em 0;
+  background: url(../img/bkg_gradient_large.png) top left repeat-x;
+}
+
+.container
+{
+  padding: 0 percentage(40/1000);
+  margin: 0 auto;
+  max-width: 920px;
+}

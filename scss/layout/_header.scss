@@ -1,0 +1,209 @@
+// -------------------------------------
+// =pageheader
+// -------------------------------------
+
+.pageheader
+{
+  padding: 1em 0;
+
+  @include mq(medium)
+  {
+    padding: 3em 0;
+  }
+
+  @include mq(large)
+  {
+    padding: 4em 0;
+  }
+}
+
+// -------------------------------------
+// =logo
+// -------------------------------------
+
+.logo
+{
+  float: left;
+  margin: 0.5em 0;
+
+  & img
+  {
+    display: block;
+  }
+}
+
+// -------------------------------------
+// =navigation
+// -------------------------------------
+
+// =small screens
+// -------------------------------------
+
+.headernav
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  clear: both;
+}
+
+.headernav__item
+{
+  display: block;
+  border-bottom: 1px solid $color-neutral2;
+
+  &:first-child
+  {
+    // clear:both; and animations prevents the padding from being on the list
+    padding-top: 1em;
+  }
+
+  &:last-child
+  {
+    border: none;
+  }
+
+}
+
+.headernav__item > a
+{
+  display: block;
+
+  padding: 1.25em 0;
+  background: url(../img/bkg_headernav_arrow.svg) 100% 50% no-repeat;
+
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 12/16 * 1rem;
+  line-height: 1;
+  font-family: $fontstack-main;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: $color-brand-main4;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover
+  {
+    color: $color-neutral6;
+  }
+}
+
+// =medium and large screens
+// -------------------------------------
+
+@include mq(medium)
+{
+  .headernav
+  {
+    float: right;
+    clear: none;
+    padding: 0;
+  }
+
+  .headernav__item
+  {
+    display: inline-block;
+    border-bottom: none;
+
+    &:first-child
+    {
+      padding-top: 0;
+    }
+  }
+
+  .headernav__item > a
+  {
+    display: inline-block;
+    padding: 1.25em 1.5em;
+    background: none;
+  }
+
+  .headernav__item--contact > a
+  {
+    margin-left: 1.25em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: 0.2em;
+
+    background-color: $color-brand-main4;
+    color: #fff;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover
+    {
+      background-color: mix(#fff, $color-brand-alt4, 10%);
+      color: #fff;
+    }
+  }
+}
+
+// -------------------------------------
+// =navigation compact
+// -------------------------------------
+
+.headernav-compact
+{
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.headernav-compact > a
+{
+  display: block;
+  margin: 0;
+  padding: 0.55em 0 0.55em 0.55em;
+}
+
+// -------------------------------------
+// =visibility (default)
+// -------------------------------------
+
+.headernav
+{
+  display: none;
+
+  @include mq(medium)
+  {
+    display: block;
+  }
+}
+
+.headernav-compact
+{
+  display: block;
+
+  @include mq(medium)
+  {
+    display: none;
+  }
+}
+
+// -------------------------------------
+// =nav visibility (js)
+// -------------------------------------
+
+@include mq(under-medium)
+{
+  .js-nav-hidden .headernav, .js-nav-visible .headernav
+  {
+    display: block;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .js-nav-hidden .headernav
+  {
+    max-height: 0;
+  }
+
+  .js-nav-visible .headernav
+  {
+    //magic number: has to be equal to the height of the menu
+    max-height: 12.75em;
+  }
+}

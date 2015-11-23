@@ -1,0 +1,486 @@
+/**
+ * Allows you to use named media queries based on breakpoints list in _variables.scss
+ * The "generate-grid-classes" value is ignored here
+ */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.alignleft {
+  text-align: left; }
+
+.aligncenter {
+  text-align: center; }
+
+.alignright {
+  text-align: right; }
+
+.visuallyhidden {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  overflow: hidden; }
+
+.offleft {
+  text-indent: -9999px;
+  overflow: hidden; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #EBEBEB;
+  color: #222; }
+
+html {
+  font: normal 100%/1.4 "Open Sans", "Helvetica", "Arial", sans-serif; }
+
+/**
+ * Gutter between grid units
+ *
+ * Use only fixed value (em, rem, px)
+ */
+/**
+ * Number of columns
+ *
+ * Always use a number or a list of numbers
+ * You can combine two or more grids
+ * Be careful with this, it generates quite a few classes per item in the list
+ * combined with many breakpoints, it can generate a lot of classes
+ */
+/**
+ * Breakpoints defined using a nested Sass map
+ *
+ * - name: name of the breakpoint (also used to namespace grid classes)
+ * - query: media query for the named breakpoint
+ * - generate-grid-classes: generate namespaced grid classes based on breakpoint or not
+ *
+ * Default sizes
+ *
+ * - small:    500px    31.25em
+ * - medium:   760px    47.5em
+ * - large:    1024px   64em
+ * - xlarge:   1140px   71.25em
+ *
+ */
+/**
+ * Push and Pull classes
+ *
+ * switch to "false" if you don't need them
+ */
+/**
+ * Use silent classes
+ *
+ * switch to "true" if you want to use @extend and silent classes
+ */
+/**
+ * Build class prefixes (silent or not)
+ */
+/**
+ * Define grid
+ *
+ * [1] grid usable on lists
+ * [2] kill default padding and margin
+ * [3] compensating left padding of leftmost .grid__unit in .grid
+ */
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -40px; }
+
+/**
+ * Grid units
+ *
+ * - 1. grid modules are 100% by default
+ * - 2. allows for padding without modifying the box width
+ * - 3. gutters created using padding
+ * - 4. using inline-block to stack the modules side by side (comment out white space in html)
+ * - 5. align top of modules
+ */
+.grid__unit {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 40px;
+  display: inline-block;
+  vertical-align: top; }
+
+/**
+ * grid aligned center
+ */
+.grid--center {
+  text-align: center; }
+  .grid--center > .grid__unit {
+    text-align: left; }
+
+/**
+ * grid aligned right
+ */
+.grid--right {
+  text-align: right; }
+  .grid--right > .grid__unit {
+    text-align: left; }
+
+/**
+ * grid vertical aligned middle
+ */
+.grid--middle > .grid__unit {
+  vertical-align: middle; }
+
+/**
+ * grid vertical aligned bottom
+ */
+.grid--bottom > .grid__unit {
+  vertical-align: middle; }
+
+/**
+ * grid gutterless
+ */
+.grid--gutterless {
+  margin-left: 0; }
+  .grid--gutterless > .grid__unit {
+    padding-left: 0; }
+
+/**
+ * - Loop through each value in the list
+ * - Create corresponding columns classes
+ * - Using "to" here since the "full" classes are created separately
+ */
+/**
+ * In SASS, you cannot extend classes that are not in the same media queries / context
+ *
+ * - The code belows generate (silent) classes for all the defined media queries breakpoints
+ * - This implies that you are using a mobile first approach
+ */
+/**
+ * include basic non-namespaced (silent) classes without any media queries
+ */
+.grid__unit--full {
+  width: 100%; }
+
+/**
+   * Create main grid classes for each column in the grids
+   */
+.grid__unit--1of12 {
+  width: 8.33333%; }
+
+.grid__unit--2of12 {
+  width: 16.66667%; }
+
+.grid__unit--3of12 {
+  width: 25%; }
+
+.grid__unit--4of12 {
+  width: 33.33333%; }
+
+.grid__unit--5of12 {
+  width: 41.66667%; }
+
+.grid__unit--6of12 {
+  width: 50%; }
+
+.grid__unit--7of12 {
+  width: 58.33333%; }
+
+.grid__unit--8of12 {
+  width: 66.66667%; }
+
+.grid__unit--9of12 {
+  width: 75%; }
+
+.grid__unit--10of12 {
+  width: 83.33333%; }
+
+.grid__unit--11of12 {
+  width: 91.66667%; }
+
+/**
+ * generate namespaced (silent) classes for all defined breakpoints
+ */
+@media all and (min-width: 31.25em) {
+  .grid__unit--small-full {
+    width: 100%; }
+  /**
+   * Create main grid classes for each column in the grids
+   */
+  .grid__unit--small-1of12 {
+    width: 8.33333%; }
+  .grid__unit--small-2of12 {
+    width: 16.66667%; }
+  .grid__unit--small-3of12 {
+    width: 25%; }
+  .grid__unit--small-4of12 {
+    width: 33.33333%; }
+  .grid__unit--small-5of12 {
+    width: 41.66667%; }
+  .grid__unit--small-6of12 {
+    width: 50%; }
+  .grid__unit--small-7of12 {
+    width: 58.33333%; }
+  .grid__unit--small-8of12 {
+    width: 66.66667%; }
+  .grid__unit--small-9of12 {
+    width: 75%; }
+  .grid__unit--small-10of12 {
+    width: 83.33333%; }
+  .grid__unit--small-11of12 {
+    width: 91.66667%; } }
+
+@media all and (min-width: 47.5em) {
+  .grid__unit--medium-full {
+    width: 100%; }
+  /**
+   * Create main grid classes for each column in the grids
+   */
+  .grid__unit--medium-1of12 {
+    width: 8.33333%; }
+  .grid__unit--medium-2of12 {
+    width: 16.66667%; }
+  .grid__unit--medium-3of12 {
+    width: 25%; }
+  .grid__unit--medium-4of12 {
+    width: 33.33333%; }
+  .grid__unit--medium-5of12 {
+    width: 41.66667%; }
+  .grid__unit--medium-6of12 {
+    width: 50%; }
+  .grid__unit--medium-7of12 {
+    width: 58.33333%; }
+  .grid__unit--medium-8of12 {
+    width: 66.66667%; }
+  .grid__unit--medium-9of12 {
+    width: 75%; }
+  .grid__unit--medium-10of12 {
+    width: 83.33333%; }
+  .grid__unit--medium-11of12 {
+    width: 91.66667%; } }
+
+@media all and (min-width: 64em) {
+  .grid__unit--large-full {
+    width: 100%; }
+  /**
+   * Create main grid classes for each column in the grids
+   */
+  .grid__unit--large-1of12 {
+    width: 8.33333%; }
+  .grid__unit--large-2of12 {
+    width: 16.66667%; }
+  .grid__unit--large-3of12 {
+    width: 25%; }
+  .grid__unit--large-4of12 {
+    width: 33.33333%; }
+  .grid__unit--large-5of12 {
+    width: 41.66667%; }
+  .grid__unit--large-6of12 {
+    width: 50%; }
+  .grid__unit--large-7of12 {
+    width: 58.33333%; }
+  .grid__unit--large-8of12 {
+    width: 66.66667%; }
+  .grid__unit--large-9of12 {
+    width: 75%; }
+  .grid__unit--large-10of12 {
+    width: 83.33333%; }
+  .grid__unit--large-11of12 {
+    width: 91.66667%; } }
+
+/**
+ * Layout in horizontal slices in a "page"
+ *
+ * .page: creates a visual page at large screen sizes
+ * .pagecontent: creates the gradient under the header
+ * .content-module: creastes the full width color bleeds (variants for colors)
+ * .container is centering things and uses max-width to contrain content
+ */
+.page {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1500px;
+  background: #fff; }
+  @media all and (min-width: 93.75em) {
+    .page {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      border-radius: 0.25em;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); } }
+
+.pagecontent {
+  padding: 4em 0;
+  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
+
+.container {
+  padding: 0 4%;
+  margin: 0 auto;
+  max-width: 920px; }
+
+.pageheader {
+  padding: 1em 0; }
+  @media all and (min-width: 47.5em) {
+    .pageheader {
+      padding: 3em 0; } }
+  @media all and (min-width: 64em) {
+    .pageheader {
+      padding: 4em 0; } }
+
+.logo {
+  float: left;
+  margin: 0.5em 0; }
+  .logo img {
+    display: block; }
+
+.headernav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  clear: both; }
+
+.headernav__item {
+  display: block;
+  border-bottom: 1px solid #EBEBEB; }
+  .headernav__item:first-child {
+    padding-top: 1em; }
+  .headernav__item:last-child {
+    border: none; }
+
+.headernav__item > a {
+  display: block;
+  padding: 1.25em 0;
+  background: url(../img/bkg_headernav_arrow.svg) 100% 50% no-repeat;
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #043140;
+  transition: all 0.2s ease-in-out; }
+  .headernav__item > a:hover {
+    color: #969BA0; }
+
+@media all and (min-width: 47.5em) {
+  .headernav {
+    float: right;
+    clear: none;
+    padding: 0; }
+  .headernav__item {
+    display: inline-block;
+    border-bottom: none; }
+    .headernav__item:first-child {
+      padding-top: 0; }
+  .headernav__item > a {
+    display: inline-block;
+    padding: 1.25em 1.5em;
+    background: none; }
+  .headernav__item--contact > a {
+    margin-left: 1.25em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: 0.2em;
+    background-color: #043140;
+    color: #fff;
+    transition: all 0.2s ease-in-out; }
+    .headernav__item--contact > a:hover {
+      background-color: #1c4c70;
+      color: #fff; } }
+
+.headernav-compact {
+  margin: 0;
+  padding: 0;
+  float: right; }
+
+.headernav-compact > a {
+  display: block;
+  margin: 0;
+  padding: 0.55em 0 0.55em 0.55em; }
+
+.headernav {
+  display: none; }
+  @media all and (min-width: 47.5em) {
+    .headernav {
+      display: block; } }
+
+.headernav-compact {
+  display: block; }
+  @media all and (min-width: 47.5em) {
+    .headernav-compact {
+      display: none; } }
+
+@media all and (max-width: 47.49em) {
+  .js-nav-hidden .headernav, .js-nav-visible .headernav {
+    display: block;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out; }
+  .js-nav-hidden .headernav {
+    max-height: 0; }
+  .js-nav-visible .headernav {
+    max-height: 12.75em; } }
+
+.pagefooter {
+  background-color: #043140;
+  padding: 3em 0;
+  border-radius: 0 0 0.25em 0.25em; }
+
+/**
+ * Stacked at small size
+ * Hosrizontal nav for medium screens and up
+ */
+.footernav {
+  list-style: none;
+  margin: 3em 0;
+  padding: 0; }
+  @media all and (min-width: 47.5em) {
+    .footernav {
+      margin: 0;
+      float: left; } }
+
+.footernav__item {
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); }
+  .footernav__item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media all and (min-width: 47.5em) {
+    .footernav__item {
+      display: inline-block;
+      margin-right: 1.5em;
+      border: none; }
+      .footernav__item:last-child {
+        margin-right: 0;
+        border: none; } }
+
+.footernav__item > a {
+  display: block;
+  padding: 1.5em 0;
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: url(../img/bkg_footernav_arrow.svg) 100% 50% no-repeat;
+  color: #fff;
+  transition: all 0.2s ease-in-out; }
+  .footernav__item > a:hover {
+    color: #15AAC4; }
+  @media all and (min-width: 47.5em) {
+    .footernav__item > a {
+      padding: 1em 0; } }
+
+.footercopy {
+  margin: 1em 0;
+  padding: 0;
+  float: right;
+  font-weight: 400;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  color: #F2F9FB; }
+
+.fluidimg {
+  max-width: 100%; }

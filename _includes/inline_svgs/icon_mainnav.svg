@@ -1,0 +1,7 @@
+<svg class="icon-nav" width="17px" height="13px" viewBox="0 0 17 13" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon Main Navigation</title>
+    <desc>Click to activate navigation</desc>
+    <rect class="icon-nav__top" x="0" y="0" width="17" height="3" fill="#043140"></rect>
+    <rect class="icon-nav__middle" x="0" y="5" width="17" height="3" fill="#043140"></rect>
+    <rect class="icon-nav__bottom" x="0" y="10" width="17" height="3" fill="#043140"></rect>
+</svg>

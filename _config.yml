@@ -1,0 +1,12 @@
+# Site settings
+title: Nisaba Templates
+email: jerome.coupe@webstoemp.com
+description: Templates for the Nisaba website.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.nisaba.dev" # the base hostname & protocol for your site
+twitter_username: jeromecoupe
+github_username:  jeromecoupe
+
+# Build settings
+markdown: kramdown
+exclude: ['node_modules/', 'scss/']

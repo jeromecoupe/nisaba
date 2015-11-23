@@ -1,0 +1,297 @@
+// -------------------------------------
+// =grid configuration
+// -------------------------------------
+
+/**
+ * Gutter between grid units
+ *
+ * Use only fixed value (em, rem, px)
+ */
+
+$grid-gutter: 40px !default;
+
+/**
+ * Number of columns
+ *
+ * Always use a number or a list of numbers
+ * You can combine two or more grids
+ * Be careful with this, it generates quite a few classes per item in the list
+ * combined with many breakpoints, it can generate a lot of classes
+ */
+
+$grid-columns: (10, 12) !default;
+
+/**
+ * Breakpoints defined using a nested Sass map
+ *
+ * - name: name of the breakpoint (also used to namespace grid classes)
+ * - query: media query for the named breakpoint
+ * - generate-grid-classes: generate namespaced grid classes based on breakpoint or not
+ *
+ * Default sizes
+ *
+ * - small:    500px    31.25em
+ * - medium:   760px    47.5em
+ * - large:    1024px   64em
+ * - xlarge:   1140px   71.25em
+ *
+ */
+
+$breakpoints-list: (
+  "small": (
+    query: "all and (min-width: 31.25em)",
+    generate-grid-classes: true
+  ),
+  "medium": (
+    query: "all and (min-width: 47.5em)",
+    generate-grid-classes: true
+  ),
+  "large": (
+    query: "all and (min-width: 64em)",
+    generate-grid-classes: true
+  ),
+  "xlarge": (
+    query: "all and (min-width: 71.25em)",
+    generate-grid-classes: false
+  )
+) !default;
+
+/**
+ * Push and Pull classes
+ *
+ * switch to "false" if you don't need them
+ */
+
+$grid-pushclasses: false !default;
+$grid-pullclasses: false !default;
+
+
+/**
+ * Use silent classes
+ *
+ * switch to "true" if you want to use @extend and silent classes
+ */
+
+$grid-silent-classes: false !default;
+
+/**
+ * Build class prefixes (silent or not)
+ */
+
+$grid-class-type: unquote(".");
+
+@if ($grid-silent-classes == true)
+{
+  $grid-class-type: unquote("%");
+}
+
+
+// -------------------------------------
+// =grid building
+// -------------------------------------
+
+/**
+ * Define grid
+ *
+ * [1] grid usable on lists
+ * [2] kill default padding and margin
+ * [3] compensating left padding of leftmost .grid__unit in .grid
+ */
+
+#{$grid-class-type}grid
+{
+    list-style: none;                    // [1]
+    margin: 0;                           // [2]
+    padding: 0;                          // [2]
+    margin-left: ($grid-gutter * -1);    // [3]
+}
+
+
+/**
+ * Grid units
+ *
+ * - 1. grid modules are 100% by default
+ * - 2. allows for padding without modifying the box width
+ * - 3. gutters created using padding
+ * - 4. using inline-block to stack the modules side by side (comment out white space in html)
+ * - 5. align top of modules
+ */
+
+#{$grid-class-type}grid__unit
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;                         // [1]
+  -webkit-box-sizing: border-box;      // [2]
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: $grid-gutter;          // [3]
+  display: inline-block;               // [4]
+  vertical-align: top;                 // [5]
+}
+
+
+/**
+ * grid aligned center
+ */
+
+#{$grid-class-type}grid--center
+{
+  text-align: center;
+
+  & > #{$grid-class-type}grid__unit
+  {
+    text-align: left;
+  }
+}
+
+
+/**
+ * grid aligned right
+ */
+
+#{$grid-class-type}grid--right
+{
+  text-align: right;
+
+  & > #{$grid-class-type}grid__unit
+  {
+    text-align: left;
+  }
+}
+
+
+/**
+ * grid vertical aligned middle
+ */
+
+#{$grid-class-type}grid--middle
+{
+  & > #{$grid-class-type}grid__unit
+  {
+    vertical-align: middle;
+  }
+}
+
+
+/**
+ * grid vertical aligned bottom
+ */
+
+#{$grid-class-type}grid--bottom
+{
+  & > #{$grid-class-type}grid__unit
+  {
+    vertical-align: middle;
+  }
+}
+
+
+/**
+ * grid gutterless
+ */
+
+#{$grid-class-type}grid--gutterless
+{
+  margin-left: 0;
+
+  & > #{$grid-class-type}grid__unit
+  {
+    padding-left: 0;
+  }
+}
+
+
+// -------------------------------------
+// =Create proportional grid classes
+// -------------------------------------
+
+/**
+ * - Loop through each value in the list
+ * - Create corresponding columns classes
+ * - Using "to" here since the "full" classes are created separately
+ */
+
+@mixin make-classes($namespace:"")
+{
+  // Create main "full" grid classes
+  #{$grid-class-type}grid__unit--#{$namespace}full { width: 100%};
+
+  // Create push "full" grid classes if needed
+  @if $grid-pushclasses
+  {
+    #{$grid-class-type}grid__unit--#{$namespace}push-full   { position: relative; left: 100%; }
+  }
+
+  // Create pull "full" grid classes if needed
+  @if $grid-pullclasses
+  {
+    #{$grid-class-type}grid__unit--#{$namespace}pull-full   { position: relative; right: 100%; }
+  }
+
+  /**
+   * Create main grid classes for each column in the grids
+   */
+  @each $columns in $grid-columns
+  {
+    @if type-of($columns) != 'number'
+    {
+      @error "$grid-columns must be a number or a list of numbers";
+    }
+
+    @for $i from 1 to $columns
+    {
+      // Create main grid classes
+      #{$grid-class-type}grid__unit--#{$namespace}#{$i}of#{$columns} { width: percentage($i / $columns); }
+
+      // Create push grid classes if needed
+      @if $grid-pushclasses
+      {
+        #{$grid-class-type}grid__unit--#{$namespace}push-#{$i}of#{$columns}   { position: relative; left: percentage($i / $columns) }
+      }
+
+      // Create pull grid classes if needed
+      @if $grid-pullclasses
+      {
+        #{$grid-class-type}grid__unit--#{$namespace}pull-#{$i}of#{$columns}   { position: relative; right: percentage($i / $columns) }
+      }
+    }
+  }
+}
+
+
+// -------------------------------------
+// =export grid in all media-queries
+// -------------------------------------
+
+/**
+ * In SASS, you cannot extend classes that are not in the same media queries / context
+ *
+ * - The code belows generate (silent) classes for all the defined media queries breakpoints
+ * - This implies that you are using a mobile first approach
+ */
+
+
+/**
+ * include basic non-namespaced (silent) classes without any media queries
+ */
+
+@include make-classes();
+
+
+/**
+ * generate namespaced (silent) classes for all defined breakpoints
+ */
+
+@each $breakpoint-name, $breakpoint-params in $breakpoints-list
+{
+  $breakpoint-query: map-get($breakpoint-params, query);
+  $breakpoint-grid:  map-get($breakpoint-params, generate-grid-classes);
+
+  @if ($breakpoint-grid == true)
+  {
+    @media #{$breakpoint-query} {
+      @include make-classes("#{$breakpoint-name}-");
+    }
+  }
+}

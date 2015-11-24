@@ -24,6 +24,21 @@
 	}
 }
 
+
 // -------------------------------------
-// =Other mixins
+// =font sizes in rems w/ fallback
 // -------------------------------------
+
+@mixin rem-size($target, $context:16)
+{
+	@if (unitless($target) == false)
+	{
+		@error "rem-size mixin requires a unitless value as parameter";
+	}
+
+	$pixels: $target * 1px;
+	$rems: $target / $context * 1rem;
+
+	font-size: $pixels;
+	font-size: $rems;
+}

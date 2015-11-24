@@ -2,11 +2,6 @@
  * Allows you to use named media queries based on breakpoints list in _variables.scss
  * The "generate-grid-classes" value is ignored here
  */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
-
 .alignleft {
   text-align: left; }
 
@@ -15,6 +10,11 @@
 
 .alignright {
   text-align: right; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 .visuallyhidden {
   position: absolute;
@@ -26,14 +26,106 @@
   text-indent: -9999px;
   overflow: hidden; }
 
+/**
+ * Trumps for margins and paddings
+ *
+ * Should only be used for tweaking
+ * Components should not use this but have their own spacing
+ */
+.mt {
+  margin-top: 1.5em !important; }
+
+.mr {
+  margin-right: 1.5em !important; }
+
+.mb {
+  margin-bottom: 1.5em !important; }
+
+.ml {
+  margin-left: 1.5em !important; }
+
+.mx {
+  margin-left: 1.5em !important;
+  margin-right: 1.5em !important; }
+
+.pt {
+  padding-top: 1.5em !important; }
+
+.pr {
+  padding-right: 1.5em !important; }
+
+.pb {
+  padding-bottom: 1.5em !important; }
+
+.pl {
+  padding-left: 1.5em !important; }
+
+.px {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important; }
+
 body {
   margin: 0;
   padding: 0;
   background: #EBEBEB;
   color: #222; }
 
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem; }
+
 html {
-  font: normal 100%/1.4 "Open Sans", "Helvetica", "Arial", sans-serif; }
+  font: normal 100%/1.5 "Open Sans", "Helvetica", "Arial", sans-serif; }
+
+.h1, .h2, .h3 {
+  font-weight: 600;
+  font-family: "Merriweather", "Georgia", "Times", serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0; }
+
+.h1 {
+  margin-bottom: 0.5em;
+  font-size: 24px;
+  font-size: 1.5rem; }
+  @media all and (min-width: 47.5em) {
+    .h1 {
+      font-size: 32px;
+      font-size: 2rem; } }
+  @media all and (min-width: 64em) {
+    .h1 {
+      font-size: 36px;
+      font-size: 2.25rem; } }
+
+.h2 {
+  margin-bottom: 0.5em;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media all and (min-width: 47.5em) {
+    .h2 {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+.h3 {
+  line-height: 1.5;
+  margin-bottom: 0.75em;
+  font-size: 16px;
+  font-size: 1rem; }
+  @media all and (min-width: 47.5em) {
+    .h3 {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+.intro {
+  font-weight: 400;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #0C5C7A; }
 
 /**
  * Gutter between grid units
@@ -293,7 +385,7 @@ html {
  *
  * .page: creates a visual page at large screen sizes
  * .pagecontent: creates the gradient under the header
- * .content-module: creastes the full width color bleeds (variants for colors)
+ * .content-module: handles spacing between content modules (variants for colors)
  * .container is centering things and uses max-width to contrain content
  */
 .page {
@@ -308,14 +400,42 @@ html {
       border-radius: 0.25em;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); } }
 
-.pagecontent {
-  padding: 4em 0;
-  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
-
 .container {
   padding: 0 4%;
   margin: 0 auto;
   max-width: 920px; }
+
+.pagecontent {
+  padding: 1px 0;
+  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
+
+.content-module {
+  margin-top: 3.75em;
+  margin-bottom: 3.75em; }
+  @media all and (min-width: 47.5em) {
+    .content-module {
+      margin-top: 5em;
+      margin-bottom: 5em; } }
+  @media all and (min-width: 64em) {
+    .content-module {
+      margin-top: 7.5em;
+      margin-bottom: 7.5em; } }
+
+/**
+ * color variations (+ padding)
+ */
+.content-module--highlight {
+  background-color: #F2F9FB;
+  padding-top: 3.75em;
+  padding-bottom: 3.75em; }
+  @media all and (min-width: 47.5em) {
+    .content-module--highlight {
+      padding-top: 5em;
+      padding-bottom: 5em; } }
+  @media all and (min-width: 64em) {
+    .content-module--highlight {
+      padding-top: 7.5em;
+      padding-bottom: 7.5em; } }
 
 .pageheader {
   padding: 1em 0; }
@@ -422,8 +542,10 @@ html {
 
 .pagefooter {
   background-color: #043140;
-  padding: 3em 0;
-  border-radius: 0 0 0.25em 0.25em; }
+  padding: 3em 0; }
+  @media all and (min-width: 93.75em) {
+    .pagefooter {
+      border-radius: 0 0 0.25em 0.25em; } }
 
 /**
  * Stacked at small size
@@ -474,13 +596,65 @@ html {
 .footercopy {
   margin: 1em 0;
   padding: 0;
-  float: right;
   font-weight: 400;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
   font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-  color: #F2F9FB; }
+  color: #C7C7C7; }
+  @media all and (min-width: 47.5em) {
+    .footercopy {
+      float: right; } }
+
+.button {
+  display: block;
+  padding: 1.5em 2em;
+  border: 1px solid #DFDFDF;
+  border-radius: 0.25em;
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: #043140;
+  transition: background-color 0.2s ease-in-out, color            0.2s ease-in-out, border-color     0.2s ease-in-out; }
+  .button:hover {
+    color: #043140;
+    border-color: #0C5C7A; }
+  @media all and (min-width: 31.25em) {
+    .button {
+      display: inline-block; } }
+
+.button--cta {
+  border-color: #0E84A1;
+  background-color: #0E84A1;
+  color: #fff; }
+  .button--cta:hover {
+    background-color: #0C5C7A;
+    border-color: #0C5C7A;
+    color: #fff; }
+
+.button-group .button + .button {
+  margin-top: 1.5em; }
+  @media all and (min-width: 31.25em) {
+    .button-group .button + .button {
+      margin-left: 1em; } }
 
 .fluidimg {
   max-width: 100%; }
+
+@media all and (min-width: 47.5em) {
+  .introblock {
+    margin-right: 40%; } }
+
+/**
+ * Simply an text with an icon on top
+ */
+.iconblock {
+  margin-bottom: 3em; }
+
+.iconblock__img {
+  margin-bottom: 1.25em; }

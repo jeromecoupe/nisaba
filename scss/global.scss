@@ -1,6 +1,10 @@
 @import "utils/_variables.scss";
 @import "utils/_mixins.scss";
-@import "utils/_helpers.scss";
+@import "utils/_functions.scss";
+@import "utils/_helpers-align.scss";
+@import "utils/_helpers-clearfix.scss";
+@import "utils/_helpers-hide.scss";
+@import "utils/_helpers-spacing.scss";
 
 @import "base/_base.scss";
 @import "base/_typography.scss";
@@ -10,4 +14,7 @@
 @import "layout/_header.scss";
 @import "layout/_footer.scss";
 
+@import "components/_buttons.scss";
 @import "components/_media.scss";
+@import "components/_introblock.scss";
+@import "components/_iconblock.scss";

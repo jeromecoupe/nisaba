@@ -5,3 +5,13 @@ body
   background: $color-neutral2;
   color: #222;
 }
+
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr
+{
+  margin: 0;
+  padding: 0;
+  margin-bottom:1.5rem;
+}

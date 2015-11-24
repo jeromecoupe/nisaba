@@ -1,4 +1,76 @@
+// -------------------------------------
+// =base
+// -------------------------------------
+
 html
 {
-  font: normal 100%/1.4 $fontstack-main;
+  font: normal 100%/1.5 $fontstack-main;
+}
+
+// -------------------------------------
+// =titles
+// -------------------------------------
+
+%title
+{
+  font-weight: 600;
+  font-family: $fontstack-alt;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+.h1
+{
+  @extend %title;
+  margin-bottom: 0.5em;
+  @include rem-size(24);
+
+  @include mq(medium)
+  {
+    @include rem-size(32);
+  }
+
+  @include mq(large)
+  {
+    @include rem-size(36);
+  }
+}
+
+.h2
+{
+  @extend %title;
+  margin-bottom: 0.5em;
+  @include rem-size(18);
+
+  @include mq(medium)
+  {
+    @include rem-size(24);
+  }
+}
+
+.h3
+{
+  @extend %title;
+  line-height: 1.5;
+  margin-bottom: 0.75em;
+  @include rem-size(16);
+
+  @include mq(medium)
+  {
+    @include rem-size(18);
+  }
+}
+
+// -------------------------------------
+// =text styles
+// -------------------------------------
+
+.intro
+{
+  font-weight: 400;
+  font-family: $fontstack-main;
+  font-size: 18px;
+  font-size: (18 / 16) * 1rem;
+  color: $color-brand-alt3;
 }

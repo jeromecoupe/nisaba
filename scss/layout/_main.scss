@@ -7,7 +7,7 @@
  *
  * .page: creates a visual page at large screen sizes
  * .pagecontent: creates the gradient under the header
- * .content-module: creastes the full width color bleeds (variants for colors)
+ * .content-module: handles spacing between content modules (variants for colors)
  * .container is centering things and uses max-width to contrain content
  */
 
@@ -27,15 +27,58 @@
   }
 }
 
-.pagecontent
-{
-  padding: 4em 0;
-  background: url(../img/bkg_gradient_large.png) top left repeat-x;
-}
-
 .container
 {
   padding: 0 percentage(40/1000);
   margin: 0 auto;
   max-width: 920px;
+}
+
+.pagecontent
+{
+  padding: 1px 0;
+  background: url(../img/bkg_gradient_large.png) top left repeat-x;
+}
+
+.content-module
+{
+  margin-top: calc-em(60);
+  margin-bottom: calc-em(60);
+
+  @include mq(medium)
+  {
+    margin-top: calc-em(80);
+    margin-bottom: calc-em(80);
+  }
+
+  @include mq(large)
+  {
+    margin-top: calc-em(120);
+    margin-bottom: calc-em(120);
+  }
+}
+
+
+/**
+ * color variations (+ padding)
+ */
+
+.content-module--highlight
+{
+  background-color: $color-brand-main1;
+
+  padding-top: calc-em(60);
+  padding-bottom: calc-em(60);
+
+  @include mq(medium)
+  {
+    padding-top: calc-em(80);
+    padding-bottom: calc-em(80);
+  }
+
+  @include mq(large)
+  {
+    padding-top: calc-em(120);
+    padding-bottom: calc-em(120);
+  }
 }

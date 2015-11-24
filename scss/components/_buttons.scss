@@ -1,0 +1,59 @@
+// -------------------------------------
+// =buttons
+// -------------------------------------
+
+.button
+{
+  display: block;
+  padding: 1.5em 2em;
+  border: 1px solid $color-neutral3;
+  border-radius: 0.25em;
+
+  font-weight: 600;
+  @include rem-size(12);
+  line-height: 1;
+  font-family: $fontstack-main;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: $color-brand-main4;
+
+  transition: background-color 0.2s ease-in-out,
+              color            0.2s ease-in-out,
+              border-color     0.2s ease-in-out;
+
+  &:hover
+  {
+    color: $color-brand-main4;
+    border-color: $color-brand-alt3;
+  }
+
+  @include mq(small)
+  {
+    display: inline-block;
+  }
+}
+
+.button--cta
+{
+  border-color: $color-brand-main3;
+  background-color: $color-brand-main3;
+  color: #fff;
+
+  &:hover
+  {
+    background-color: $color-brand-alt3;
+    border-color: $color-brand-alt3;
+    color: #fff;
+  }
+}
+
+.button-group .button + .button
+{
+  margin-top: 1.5em;
+
+  @include mq(small)
+  {
+    margin-left: 1em;
+  }
+}

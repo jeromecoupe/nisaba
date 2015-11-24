@@ -1,0 +1,24 @@
+// -------------------------------------
+// =spacing
+// -------------------------------------
+
+/**
+ * Trumps for margins and paddings
+ *
+ * Should only be used for tweaking
+ * Components should not use this but have their own spacing
+ */
+
+$nisaba-spacing: 1.5em !default;
+
+.mt { margin-top: $nisaba-spacing !important; }
+.mr { margin-right: $nisaba-spacing !important; }
+.mb { margin-bottom: $nisaba-spacing !important; }
+.ml { margin-left: $nisaba-spacing !important; }
+.mx { margin-left: $nisaba-spacing !important; margin-right: $nisaba-spacing !important; }
+
+.pt { padding-top: $nisaba-spacing !important; }
+.pr { padding-right: $nisaba-spacing !important; }
+.pb { padding-bottom: $nisaba-spacing !important; }
+.pl { padding-left: $nisaba-spacing !important; }
+.px { padding-left: $nisaba-spacing !important; padding-right: $nisaba-spacing !important; }

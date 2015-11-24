@@ -1,0 +1,11 @@
+@function calc-em($target, $context:16)
+{
+  @if (unitless($target) == false)
+  {
+    @error "rem-size mixin requires a unitless value as parameter";
+  }
+
+  $result: ($target / 16) * 1em;
+
+  @return $result;
+}

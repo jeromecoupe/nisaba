@@ -1,0 +1,37 @@
+// -------------------------------------
+// =banners
+// -------------------------------------
+
+.banner
+{
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner--patchwork
+{
+  background-image: url(../img/banners/mozaic_home_s.jpg);
+  padding-top: percentage(200/400);
+
+  @include mq(small)
+  {
+    background-image: url(../img/banners/mozaic_home_m.jpg);
+    padding-top: percentage(6/16);
+  }
+
+  @include mq(medium)
+  {
+    background-image: url(../img/banners/mozaic_home_l.jpg);
+  }
+
+  @include mq(large)
+  {
+    background-image: url(../img/banners/mozaic_home_xl.jpg);
+  }
+
+  @include mq(xlarge)
+  {
+    background-image: url(../img/banners/mozaic_home_xxl.jpg);
+  }
+}

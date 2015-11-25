@@ -9,4 +9,4 @@ github_username:  jeromecoupe
 
 # Build settings
 markdown: kramdown
-exclude: ['node_modules/', 'scss/']
+exclude: ['node_modules/', 'scss/', 'gulpfile.js', 'package.json', 'README.md']

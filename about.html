@@ -68,7 +68,13 @@ layout: default
     <div class="container">
 
       <div class="banner__picture">
-        <img src="img/caroline_de_schrevel.jpg" class="fluidimg" alt="Caroline de Schrevel">
+        <img src="img/caroline_de_schrevel_small.jpg"
+             srcset="img/caroline_de_schrevel_small.jpg 400w,
+                     img/caroline_de_schrevel_medium.jpg 600w,
+                     img/caroline_de_schrevel_large.jpg 800w"
+             sizes="(min-width: 47.5em) 50vw, 100vw"
+             class="fluidimg"
+             alt="Caroline de Schrevel">
       </div>
 
     </div>
@@ -78,7 +84,7 @@ layout: default
     <div class="container">
 
       <div class="grid">
-        <div class="grid__unit  grid__unit--medium-6of12">
+        <div class="grid__unit  grid__unit--medium-6of12  mb">
 
           <h2 class="h1">Notre engagement</h2>
           <div class="intro">

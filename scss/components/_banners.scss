@@ -11,39 +11,55 @@
 
 .banner--patchwork
 {
-  background-image: url(../img/banners/mozaic_home_s.jpg);
+  background-image: url(../img/banners/banner_home_s.jpg);
   padding-top: percentage(200/400);
 
   @include mq(small)
   {
-    background-image: url(../img/banners/mozaic_home_m.jpg);
+    background-image: url(../img/banners/banner_home_m.jpg);
     padding-top: percentage(6/16);
   }
 
   @include mq(medium)
   {
-    background-image: url(../img/banners/mozaic_home_l.jpg);
+    background-image: url(../img/banners/banner_home_l.jpg);
   }
 
   @include mq(large)
   {
-    background-image: url(../img/banners/mozaic_home_xl.jpg);
+    background-image: url(../img/banners/banner_home_xl.jpg);
   }
 
   @include mq(xlarge)
   {
-    background-image: url(../img/banners/mozaic_home_xxl.jpg);
+    background-image: url(../img/banners/banner_home_xxl.jpg);
   }
 }
 
 .banner--about
 {
   background-color: $color-brand-main4;
-  background-image: url(../img/banners/banner_about_xxl.jpg);
+  background-image: url(../img/banners/banner_about_s.jpg);
+
+  @include mq(small)
+  {
+    background-image: url(../img/banners/banner_about_m.jpg);
+  }
 
   @include mq(medium)
   {
     padding: 40px 0;
+    background-image: url(../img/banners/banner_about_l.jpg);
+  }
+
+  @include mq(large)
+  {
+    background-image: url(../img/banners/banner_about_xl.jpg);
+  }
+
+  @include mq(xlarge)
+  {
+    background-image: url(../img/banners/banner_about_xxl.jpg);
   }
 }
 
@@ -54,11 +70,16 @@
     position: relative;
     top: 120px;
     width: calc(50% - 1rem);
+    margin-bottom: 20px; /* avoid being to close to text underneath */
+  }
+
+  @include mq(medium)
+  {
+    margin-bottom: 0;
   }
 
   & > img
   {
     display: block;
-    margin-bottom: 40px;
   }
 }

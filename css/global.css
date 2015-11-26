@@ -620,38 +620,53 @@ html {
   background-size: cover; }
 
 .banner--patchwork {
-  background-image: url(../img/banners/mozaic_home_s.jpg);
+  background-image: url(../img/banners/banner_home_s.jpg);
   padding-top: 50%; }
   @media all and (min-width: 31.25em) {
     .banner--patchwork {
-      background-image: url(../img/banners/mozaic_home_m.jpg);
+      background-image: url(../img/banners/banner_home_m.jpg);
       padding-top: 37.5%; } }
   @media all and (min-width: 47.5em) {
     .banner--patchwork {
-      background-image: url(../img/banners/mozaic_home_l.jpg); } }
+      background-image: url(../img/banners/banner_home_l.jpg); } }
   @media all and (min-width: 64em) {
     .banner--patchwork {
-      background-image: url(../img/banners/mozaic_home_xl.jpg); } }
+      background-image: url(../img/banners/banner_home_xl.jpg); } }
   @media all and (min-width: 71.25em) {
     .banner--patchwork {
-      background-image: url(../img/banners/mozaic_home_xxl.jpg); } }
+      background-image: url(../img/banners/banner_home_xxl.jpg); } }
 
 .banner--about {
   background-color: #043140;
-  background-image: url(../img/banners/banner_about_xxl.jpg); }
+  background-image: url(../img/banners/banner_about_s.jpg); }
+  @media all and (min-width: 31.25em) {
+    .banner--about {
+      background-image: url(../img/banners/banner_about_m.jpg); } }
   @media all and (min-width: 47.5em) {
     .banner--about {
-      padding: 40px 0; } }
+      padding: 40px 0;
+      background-image: url(../img/banners/banner_about_l.jpg); } }
+  @media all and (min-width: 64em) {
+    .banner--about {
+      background-image: url(../img/banners/banner_about_xl.jpg); } }
+  @media all and (min-width: 71.25em) {
+    .banner--about {
+      background-image: url(../img/banners/banner_about_xxl.jpg); } }
 
 @media all and (min-width: 47.5em) {
   .banner__picture {
     position: relative;
     top: 120px;
-    width: calc(50% - 1rem); } }
+    width: calc(50% - 1rem);
+    margin-bottom: 20px;
+    /* avoid being to close to text underneath */ } }
+
+@media all and (min-width: 47.5em) {
+  .banner__picture {
+    margin-bottom: 0; } }
 
 .banner__picture > img {
-  display: block;
-  margin-bottom: 40px; }
+  display: block; }
 
 .button {
   display: block;

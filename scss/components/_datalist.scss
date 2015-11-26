@@ -1,0 +1,130 @@
+// -------------------------------------
+// =datalist
+// -------------------------------------
+
+$datalist-border-width: 1px;
+$datalist-border-style: solid;
+$datalist-border-color: $color-neutral2;
+
+.datalist
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: $datalist-border-width $datalist-border-style $datalist-border-color;
+}
+
+.datalist__item
+{
+  flex: 0 1 100%;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-bottom: $datalist-border-width $datalist-border-style $datalist-border-color;
+
+  @include mq(medium)
+  {
+    flex: 0 1 50%;
+    width: 50%;
+    border-right: $datalist-border-width $datalist-border-style $datalist-border-color;
+
+    &:nth-child(2n)
+    {
+      border-right: none;
+    }
+  }
+
+  @include mq(large)
+  {
+    flex: 0 1 25%;
+    width: 25%;
+
+    &:nth-child(2n)
+    {
+      border-right: $datalist-border-width $datalist-border-style $datalist-border-color;
+    }
+
+    &:last-child
+    {
+      border-right: none;
+    }
+  }
+}
+
+.datablock
+{
+  margin: 0;
+  padding: calc-em(20);
+
+  @include mq(medium)
+  {
+    padding: calc-em(40) calc-em(20);
+  }
+
+  @include mq(large)
+  {
+    padding: calc-em(80) calc-em(40);
+  }
+
+}
+
+.datablock__number, .datablock__metric, .datablock__tagline
+{
+  display: block;
+  font-family: $fontstack-alt;
+  line-height: 1;
+}
+
+.datablock__number
+{
+  @include rem-size(36);
+  color: $color-brand-accent3;
+
+  @include mq(medium)
+  {
+    @include rem-size(48);
+  }
+
+  @include mq(xlarge)
+  {
+    @include rem-size(72);
+  }
+}
+
+.datablock__metric
+{
+  margin-top: 0.5em;
+  @include rem-size(18);
+  color: $color-brand-main2;
+
+  @include mq(medium)
+  {
+    @include rem-size(20);
+  }
+
+  @include mq(xlarge)
+  {
+    @include rem-size(24);
+  }
+}
+
+.datablock__tagline
+{
+  margin-top: 0.5em;
+  @include rem-size(14);
+  font-style: italic;
+  color: $color-neutral4;
+
+  @include mq(medium)
+  {
+    @include rem-size(14);
+  }
+
+  @include mq(xlarge)
+  {
+    @include rem-size(16);
+  }
+}

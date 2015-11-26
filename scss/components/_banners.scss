@@ -35,3 +35,30 @@
     background-image: url(../img/banners/mozaic_home_xxl.jpg);
   }
 }
+
+.banner--about
+{
+  background-color: $color-brand-main4;
+  background-image: url(../img/banners/banner_about_xxl.jpg);
+
+  @include mq(medium)
+  {
+    padding: 40px 0;
+  }
+}
+
+.banner__picture
+{
+  @include mq(medium)
+  {
+    position: relative;
+    top: 120px;
+    width: calc(50% - 1rem);
+  }
+
+  & > img
+  {
+    display: block;
+    margin-bottom: 40px;
+  }
+}

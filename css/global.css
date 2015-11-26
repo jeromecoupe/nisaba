@@ -179,7 +179,7 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-left: -40px; }
+  margin-left: -2rem; }
 
 /**
  * Grid units
@@ -197,7 +197,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding-left: 40px;
+  padding-left: 2rem;
   display: inline-block;
   vertical-align: top; }
 
@@ -636,9 +636,26 @@ html {
     .banner--patchwork {
       background-image: url(../img/banners/mozaic_home_xxl.jpg); } }
 
+.banner--about {
+  background-color: #043140;
+  background-image: url(../img/banners/banner_about_xxl.jpg); }
+  @media all and (min-width: 47.5em) {
+    .banner--about {
+      padding: 40px 0; } }
+
+@media all and (min-width: 47.5em) {
+  .banner__picture {
+    position: relative;
+    top: 120px;
+    width: calc(50% - 1rem); } }
+
+.banner__picture > img {
+  display: block;
+  margin-bottom: 40px; }
+
 .button {
   display: block;
-  padding: 1.7em 2.5em;
+  padding: 1.5em 2.75em;
   border: 1px solid #DFDFDF;
   border-radius: 0.25em;
   font-weight: 600;
@@ -688,3 +705,98 @@ html {
 
 .iconblock__img {
   margin-bottom: 1.25em; }
+
+.txtcolumns {
+  column-gap: 2rem; }
+
+@media all and (min-width: 47.5em) {
+  .txtcolumns--2 {
+    column-count: 2; } }
+
+.datalist {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #EBEBEB; }
+
+.datalist__item {
+  flex: 0 1 100%;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EBEBEB; }
+  @media all and (min-width: 47.5em) {
+    .datalist__item {
+      flex: 0 1 50%;
+      width: 50%;
+      border-right: 1px solid #EBEBEB; }
+      .datalist__item:nth-child(2n) {
+        border-right: none; } }
+  @media all and (min-width: 64em) {
+    .datalist__item {
+      flex: 0 1 25%;
+      width: 25%; }
+      .datalist__item:nth-child(2n) {
+        border-right: 1px solid #EBEBEB; }
+      .datalist__item:last-child {
+        border-right: none; } }
+
+.datablock {
+  margin: 0;
+  padding: 1.25em; }
+  @media all and (min-width: 47.5em) {
+    .datablock {
+      padding: 2.5em 1.25em; } }
+  @media all and (min-width: 64em) {
+    .datablock {
+      padding: 5em 2.5em; } }
+
+.datablock__number, .datablock__metric, .datablock__tagline {
+  display: block;
+  font-family: "Merriweather", "Georgia", "Times", serif;
+  line-height: 1; }
+
+.datablock__number {
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #F7B801; }
+  @media all and (min-width: 47.5em) {
+    .datablock__number {
+      font-size: 48px;
+      font-size: 3rem; } }
+  @media all and (min-width: 71.25em) {
+    .datablock__number {
+      font-size: 72px;
+      font-size: 4.5rem; } }
+
+.datablock__metric {
+  margin-top: 0.5em;
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #15AAC4; }
+  @media all and (min-width: 47.5em) {
+    .datablock__metric {
+      font-size: 20px;
+      font-size: 1.25rem; } }
+  @media all and (min-width: 71.25em) {
+    .datablock__metric {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+.datablock__tagline {
+  margin-top: 0.5em;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #C7C7C7; }
+  @media all and (min-width: 47.5em) {
+    .datablock__tagline {
+      font-size: 14px;
+      font-size: 0.875rem; } }
+  @media all and (min-width: 71.25em) {
+    .datablock__tagline {
+      font-size: 16px;
+      font-size: 1rem; } }

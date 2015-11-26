@@ -1,0 +1,16 @@
+// -------------------------------------
+// =columns for text
+// -------------------------------------
+
+.txtcolumns
+{
+  column-gap: 2rem;
+}
+
+.txtcolumns--2
+{
+  @include mq(medium)
+  {
+    column-count: 2;
+  }
+}

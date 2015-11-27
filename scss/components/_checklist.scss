@@ -1,0 +1,23 @@
+// -------------------------------------
+// =checklist
+// -------------------------------------
+
+.checklist
+{
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 0;
+}
+
+.checklist--tiny
+{
+  @include rem-size(14);
+}
+
+.checklist__item
+{
+  padding-left: 20px;
+  margin-bottom: 0.75em;
+  background: url(../img/bkg_checklist.svg) 0 0.5em no-repeat;
+  color: $color-neutral7;
+}

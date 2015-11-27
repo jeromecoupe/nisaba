@@ -86,7 +86,8 @@ html {
   font-family: "Merriweather", "Georgia", "Times", serif;
   line-height: 1.4;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: #222222; }
 
 .h1 {
   margin-bottom: 0.5em;
@@ -100,6 +101,9 @@ html {
     .h1 {
       font-size: 36px;
       font-size: 2.25rem; } }
+
+.h1--light {
+  color: #fff; }
 
 .h2 {
   margin-bottom: 0.5em;
@@ -126,6 +130,86 @@ html {
   font-size: 18px;
   font-size: 1.125rem;
   color: #0C5C7A; }
+
+.intro--light {
+  color: #b6ced7; }
+
+.text-light {
+  color: #DFDFDF; }
+
+.text-small {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
+.text-xsmall {
+  font-size: 12px;
+  font-size: 0.75rem; }
+
+.pagefooter {
+  background-color: #043140;
+  padding: 3em 0; }
+  @media all and (min-width: 93.75em) {
+    .pagefooter {
+      border-radius: 0 0 0.25em 0.25em; } }
+
+/**
+ * Stacked at small size
+ * Hosrizontal nav for medium screens and up
+ */
+.footernav {
+  list-style: none;
+  margin: 3em 0;
+  padding: 0; }
+  @media all and (min-width: 47.5em) {
+    .footernav {
+      margin: 0;
+      float: left; } }
+
+.footernav__item {
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); }
+  .footernav__item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media all and (min-width: 47.5em) {
+    .footernav__item {
+      display: inline-block;
+      margin-right: 1.5em;
+      border: none; }
+      .footernav__item:last-child {
+        margin-right: 0;
+        border: none; } }
+
+.footernav__item > a {
+  display: block;
+  padding: 1.5em 0;
+  font-weight: 600;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: url(../img/bkg_footernav_arrow.svg) 100% 50% no-repeat;
+  color: #fff;
+  transition: all 0.2s ease-in-out; }
+  .footernav__item > a:hover {
+    color: #15AAC4; }
+  @media all and (min-width: 47.5em) {
+    .footernav__item > a {
+      padding: 1em 0; } }
+
+.footercopy {
+  margin: 1em 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  color: #C7C7C7; }
+  @media all and (min-width: 47.5em) {
+    .footercopy {
+      float: right; } }
 
 /**
  * Gutter between grid units
@@ -380,63 +464,6 @@ html {
   .grid__unit--large-11of12 {
     width: 91.66667%; } }
 
-/**
- * Layout in horizontal slices in a "page"
- *
- * .page: creates a visual page at large screen sizes
- * .pagecontent: creates the gradient under the header
- * .content-module: handles spacing between content modules (variants for colors)
- * .container is centering things and uses max-width to contrain content
- */
-.page {
-  padding: 0;
-  margin: 0 auto;
-  max-width: 1500px;
-  background: #fff; }
-  @media all and (min-width: 93.75em) {
-    .page {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-      border-radius: 0.25em;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); } }
-
-.container {
-  padding: 0 4%;
-  margin: 0 auto;
-  max-width: 920px; }
-
-.pagecontent {
-  padding: 1px 0;
-  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
-
-.content-module {
-  margin-top: 3.75em;
-  margin-bottom: 3.75em; }
-  @media all and (min-width: 47.5em) {
-    .content-module {
-      margin-top: 5em;
-      margin-bottom: 5em; } }
-  @media all and (min-width: 64em) {
-    .content-module {
-      margin-top: 7.5em;
-      margin-bottom: 7.5em; } }
-
-/**
- * color variations (+ padding)
- */
-.content-module--highlight {
-  background-color: #F2F9FB;
-  padding-top: 3.75em;
-  padding-bottom: 3.75em; }
-  @media all and (min-width: 47.5em) {
-    .content-module--highlight {
-      padding-top: 5em;
-      padding-bottom: 5em; } }
-  @media all and (min-width: 64em) {
-    .content-module--highlight {
-      padding-top: 7.5em;
-      padding-bottom: 7.5em; } }
-
 .pageheader {
   padding: 1.5em 0; }
   @media all and (min-width: 47.5em) {
@@ -548,71 +575,70 @@ html {
   .js-nav-visible .headernav {
     max-height: 12.75em; } }
 
-.pagefooter {
-  background-color: #043140;
-  padding: 3em 0; }
+/**
+ * Layout in horizontal slices in a "page"
+ *
+ * .page: creates a visual page at large screen sizes
+ * .pagecontent: creates the gradient under the header
+ * .content-module: handles spacing between content modules (variants for colors)
+ * .container is centering things and uses max-width to contrain content
+ */
+.page {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1500px;
+  background: #fff; }
   @media all and (min-width: 93.75em) {
-    .pagefooter {
-      border-radius: 0 0 0.25em 0.25em; } }
+    .page {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      border-radius: 0.25em;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); } }
+
+.container {
+  padding: 0 4%;
+  margin: 0 auto;
+  max-width: 920px; }
+
+.pagecontent {
+  padding: 1px 0;
+  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
+
+.content-module {
+  margin-top: 3.75em;
+  margin-bottom: 3.75em; }
+  @media all and (min-width: 47.5em) {
+    .content-module {
+      margin-top: 5em;
+      margin-bottom: 5em; } }
+  @media all and (min-width: 64em) {
+    .content-module {
+      margin-top: 7.5em;
+      margin-bottom: 7.5em; } }
 
 /**
- * Stacked at small size
- * Hosrizontal nav for medium screens and up
+ * padded variation
  */
-.footernav {
-  list-style: none;
-  margin: 3em 0;
-  padding: 0; }
+.content-module--padded {
+  padding-top: 3.75em;
+  padding-bottom: 3.75em; }
   @media all and (min-width: 47.5em) {
-    .footernav {
-      margin: 0;
-      float: left; } }
+    .content-module--padded {
+      padding-top: 5em;
+      padding-bottom: 5em; } }
+  @media all and (min-width: 64em) {
+    .content-module--padded {
+      padding-top: 7.5em;
+      padding-bottom: 7.5em; } }
 
-.footernav__item {
-  display: block;
-  border-top: 1px solid rgba(255, 255, 255, 0.15); }
-  .footernav__item:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
-  @media all and (min-width: 47.5em) {
-    .footernav__item {
-      display: inline-block;
-      margin-right: 1.5em;
-      border: none; }
-      .footernav__item:last-child {
-        margin-right: 0;
-        border: none; } }
+/**
+ * color variations
+ */
+.content-module--highlight {
+  background-color: #F2F9FB; }
 
-.footernav__item > a {
-  display: block;
-  padding: 1.5em 0;
-  font-weight: 600;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: url(../img/bkg_footernav_arrow.svg) 100% 50% no-repeat;
-  color: #fff;
-  transition: all 0.2s ease-in-out; }
-  .footernav__item > a:hover {
-    color: #15AAC4; }
-  @media all and (min-width: 47.5em) {
-    .footernav__item > a {
-      padding: 1em 0; } }
-
-.footercopy {
-  margin: 1em 0;
-  padding: 0;
-  font-weight: 400;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-  color: #C7C7C7; }
-  @media all and (min-width: 47.5em) {
-    .footercopy {
-      float: right; } }
+.content-module--dark {
+  background-color: #043140; }
 
 .banner {
   background-position: 50% 50%;
@@ -636,6 +662,12 @@ html {
     .banner--patchwork {
       background-image: url(../img/banners/banner_home_xxl.jpg); } }
 
+/**
+ * This one has an image positioned within it
+ *
+ * Positioned slightly outside its container
+ * at medium and large * screen sizes
+ */
 .banner--about {
   background-color: #043140;
   background-image: url(../img/banners/banner_about_s.jpg); }
@@ -654,7 +686,7 @@ html {
       background-image: url(../img/banners/banner_about_xxl.jpg); } }
 
 @media all and (min-width: 47.5em) {
-  .banner__picture {
+  .banner--about__picture {
     position: relative;
     top: 120px;
     width: calc(50% - 1rem);
@@ -662,17 +694,50 @@ html {
     /* avoid being to close to text underneath */ } }
 
 @media all and (min-width: 47.5em) {
-  .banner__picture {
+  .banner--about__picture {
     margin-bottom: 0; } }
 
-.banner__picture > img {
+.banner--about__picture > img {
   display: block; }
+
+.banner--notaires {
+  background-image: url(../img/banners/banner_notaires_s.jpg);
+  padding-top: 31.25%; }
+  @media all and (min-width: 31.25em) {
+    .banner--notaires {
+      background-image: url(../img/banners/banner_notaires_m.jpg); } }
+  @media all and (min-width: 47.5em) {
+    .banner--notaires {
+      background-image: url(../img/banners/banner_notaires_l.jpg); } }
+  @media all and (min-width: 64em) {
+    .banner--notaires {
+      background-image: url(../img/banners/banner_notaires_xl.jpg); } }
+  @media all and (min-width: 71.25em) {
+    .banner--notaires {
+      background-image: url(../img/banners/banner_notaires_xxl.jpg); } }
+
+.box {
+  padding: 2em;
+  margin-bottom: 1.5em; }
+  .box p:last-child {
+    margin-bottom: 0; }
+
+/**
+ * Color variations
+ */
+.box--white {
+  background: #fff; }
+
+.bulletblock {
+  padding-left: 1.5em;
+  margin-bottom: 2em;
+  background: url(../img/bkg_bullet.svg) 0 0.5em no-repeat; }
 
 .button {
   display: block;
   padding: 1.5em 2.75em;
   border: 1px solid #DFDFDF;
-  border-radius: 0.25em;
+  border-radius: 0.2em;
   font-weight: 600;
   font-size: 12px;
   font-size: 0.75rem;
@@ -690,6 +755,16 @@ html {
     .button {
       display: inline-block; } }
 
+/**
+ * Full width always
+ */
+@media all and (min-width: 31.25em) {
+  .button--fullwidth {
+    display: block; } }
+
+/**
+ * Color variations
+ */
 .button--cta {
   border-color: #0E84A1;
   background-color: #0E84A1;
@@ -699,34 +774,36 @@ html {
     border-color: #0C5C7A;
     color: #fff; }
 
+.button--accent {
+  border-radius: 0;
+  border-color: #F7B801;
+  background-color: #F7B801;
+  color: #424B54; }
+  .button--accent:hover {
+    background-color: #F18F01;
+    border-color: #F18F01;
+    color: #424B54; }
+
 .button-group .button + .button {
   margin-top: 1.5em; }
   @media all and (min-width: 31.25em) {
     .button-group .button + .button {
       margin-left: 1em; } }
 
-.fluidimg {
-  max-width: 100%; }
+.checklist {
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 0; }
 
-@media all and (min-width: 47.5em) {
-  .introblock {
-    margin-right: 40%; } }
+.checklist--tiny {
+  font-size: 14px;
+  font-size: 0.875rem; }
 
-/**
- * Simply an text with an icon on top
- */
-.iconblock {
-  margin-bottom: 3em; }
-
-.iconblock__img {
-  margin-bottom: 1.25em; }
-
-.txtcolumns {
-  column-gap: 2rem; }
-
-@media all and (min-width: 47.5em) {
-  .txtcolumns--2 {
-    column-count: 2; } }
+.checklist__item {
+  padding-left: 20px;
+  margin-bottom: 0.75em;
+  background: url(../img/bkg_checklist.svg) 0 0.5em no-repeat;
+  color: #424B54; }
 
 .datalist {
   display: flex;
@@ -815,3 +892,73 @@ html {
     .datablock__tagline {
       font-size: 16px;
       font-size: 1rem; } }
+
+@media all and (min-width: 47.5em) {
+  .introblock {
+    margin-right: 40%; } }
+
+/**
+ * Simply an text with an icon on top
+ */
+.iconblock {
+  margin-bottom: 3em; }
+
+.iconblock__img {
+  margin-bottom: 1.25em; }
+
+.fluidimg {
+  max-width: 100%; }
+
+.testimonial {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  background: url(../img/bkg_testimonial.svg) 50% 0 no-repeat;
+  text-align: center; }
+  @media all and (min-width: 47.5em) {
+    .testimonial {
+      margin-left: 15%;
+      margin-right: 15%; } }
+  @media all and (min-width: 64em) {
+    .testimonial {
+      margin-left: 15%;
+      margin-right: 15%; } }
+
+.testimonial__text {
+  font-family: "Merriweather", "Georgia", "Times", serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media all and (min-width: 47.5em) {
+    .testimonial__text {
+      font-size: 20px;
+      font-size: 1.25rem; } }
+
+.testimonial__name, .testimonial__function {
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase; }
+
+.testimonial__name {
+  color: #969BA0; }
+
+.testimonial__function {
+  color: #C7C7C7; }
+  .testimonial__function > a {
+    color: #C7C7C7;
+    text-decoration: none;
+    border-bottom: 1px dotted #CCE6F4; }
+  .testimonial__function > a:hover {
+    color: #5FC2F1;
+    border-color: #5FC2F1; }
+
+.txtcolumns {
+  column-gap: 2rem; }
+
+@media all and (min-width: 47.5em) {
+  .txtcolumns--2 {
+    column-count: 2; } }

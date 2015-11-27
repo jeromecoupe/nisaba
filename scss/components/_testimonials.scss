@@ -1,0 +1,70 @@
+// -------------------------------------
+// =testimonials
+// -------------------------------------
+
+.testimonial
+{
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  background: url(../img/bkg_testimonial.svg) 50% 0 no-repeat;
+  text-align: center;
+
+  @include mq(medium)
+  {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  @include mq(large)
+  {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+.testimonial__text
+{
+  font-family: $fontstack-alt;
+  font-weight: 600;
+  font-style: italic;
+
+  @include rem-size(18);
+
+  @include mq(medium)
+  {
+    @include rem-size(20);
+  }
+}
+
+.testimonial__name, .testimonial__function
+{
+  font-family: $fontstack-main;
+  font-weight: 400;
+  font-style: normal;
+  @include rem-size(12);
+  text-transform: uppercase;
+}
+
+.testimonial__name
+{
+  color: $color-neutral6;
+}
+
+.testimonial__function
+{
+  color: $color-neutral4;
+
+  & > a
+  {
+    color: $color-neutral4;
+    text-decoration: none;
+    border-bottom: 1px dotted $color-brand-alt1;
+  }
+
+  & > a:hover
+  {
+    color: $color-brand-alt2;
+    border-color: $color-brand-alt2;
+  }
+}

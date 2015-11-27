@@ -18,6 +18,7 @@ html
   line-height: 1.4;
   margin: 0;
   padding: 0;
+  color: $color-neutral8;
 }
 
 .h1
@@ -35,6 +36,11 @@ html
   {
     @include rem-size(36);
   }
+}
+
+.h1--light
+{
+  color: #fff;
 }
 
 .h2
@@ -70,7 +76,26 @@ html
 {
   font-weight: 400;
   font-family: $fontstack-main;
-  font-size: 18px;
-  font-size: (18 / 16) * 1rem;
+  @include rem-size(18);
   color: $color-brand-alt3;
+}
+
+.intro--light
+{
+  color: mix(#fff, $color-brand-alt3, 70%);
+}
+
+.text-light
+{
+  color: $color-neutral3;
+}
+
+.text-small
+{
+  @include rem-size(14);
+}
+
+.text-xsmall
+{
+  @include rem-size(12);
 }

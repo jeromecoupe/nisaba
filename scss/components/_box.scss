@@ -1,0 +1,23 @@
+// -------------------------------------
+// =box
+// -------------------------------------
+
+.box
+{
+  padding: 2em;
+  margin-bottom: 1.5em;
+
+  p:last-child
+  {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Color variations
+ */
+
+.box--white
+{
+  background: #fff;
+}

@@ -7,7 +7,7 @@
   display: block;
   padding: 1.5em 2.75em;
   border: 1px solid $color-neutral3;
-  border-radius: 0.25em;
+  border-radius: 0.2em;
 
   font-weight: 600;
   @include rem-size(12);
@@ -34,6 +34,22 @@
   }
 }
 
+/**
+ * Full width always
+ */
+
+.button--fullwidth
+{
+  @include mq(small)
+  {
+    display: block;
+  }
+}
+
+/**
+ * Color variations
+ */
+
 .button--cta
 {
   border-color: $color-brand-main3;
@@ -45,6 +61,21 @@
     background-color: $color-brand-alt3;
     border-color: $color-brand-alt3;
     color: #fff;
+  }
+}
+
+.button--accent
+{
+  border-radius: 0;
+  border-color: $color-brand-accent3;
+  background-color: $color-brand-accent3;
+  color: $color-neutral7;
+
+  &:hover
+  {
+    background-color: $color-brand-accent4;
+    border-color: $color-brand-accent4;
+    color: $color-neutral7;
   }
 }
 

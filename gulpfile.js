@@ -51,8 +51,7 @@ gulp.task('img', function() {
 		progressive: true,
 		svgoPlugins: [ {removeViewBox:false}, {removeUselessStrokeAndFill:false} ]
 	}))
-	.pipe(gulp.dest('./img/'))
-	.pipe(notify({ message: 'Images task done' }));
+	.pipe(gulp.dest('./img/'));
 });
 
 // CSS task

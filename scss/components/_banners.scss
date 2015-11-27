@@ -9,6 +9,11 @@
   background-size: cover;
 }
 
+
+// -------------------------------------
+// =patchwork home
+// -------------------------------------
+
 .banner--patchwork
 {
   background-image: url(../img/banners/banner_home_s.jpg);
@@ -35,6 +40,18 @@
     background-image: url(../img/banners/banner_home_xxl.jpg);
   }
 }
+
+
+// -------------------------------------
+// =about
+// -------------------------------------
+
+/**
+ * This one has an image positioned within it
+ *
+ * Positioned slightly outside its container
+ * at medium and large * screen sizes
+ */
 
 .banner--about
 {
@@ -63,7 +80,7 @@
   }
 }
 
-.banner__picture
+.banner--about__picture
 {
   @include mq(medium)
   {
@@ -81,5 +98,35 @@
   & > img
   {
     display: block;
+  }
+}
+
+// -------------------------------------
+// =notaires
+// -------------------------------------
+
+.banner--notaires
+{
+  background-image: url(../img/banners/banner_notaires_s.jpg);
+  padding-top: percentage(125/400);
+
+  @include mq(small)
+  {
+    background-image: url(../img/banners/banner_notaires_m.jpg);
+  }
+
+  @include mq(medium)
+  {
+    background-image: url(../img/banners/banner_notaires_l.jpg);
+  }
+
+  @include mq(large)
+  {
+    background-image: url(../img/banners/banner_notaires_xl.jpg);
+  }
+
+  @include mq(xlarge)
+  {
+    background-image: url(../img/banners/banner_notaires_xxl.jpg);
   }
 }

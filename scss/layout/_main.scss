@@ -59,25 +59,38 @@
 }
 
 /**
- * color variations (+ padding)
+ * padded variation
  */
 
-.content-module--highlight
-{
-  background-color: $color-brand-main1;
+ .content-module--padded
+ {
+   padding-top: calc-em(60);
+   padding-bottom: calc-em(60);
 
-  padding-top: calc-em(60);
-  padding-bottom: calc-em(60);
+   @include mq(medium)
+   {
+     padding-top: calc-em(80);
+     padding-bottom: calc-em(80);
+   }
 
-  @include mq(medium)
-  {
-    padding-top: calc-em(80);
-    padding-bottom: calc-em(80);
-  }
+   @include mq(large)
+   {
+     padding-top: calc-em(120);
+     padding-bottom: calc-em(120);
+   }
+ }
 
-  @include mq(large)
-  {
-    padding-top: calc-em(120);
-    padding-bottom: calc-em(120);
-  }
-}
+
+/**
+ * color variations
+ */
+
+ .content-module--highlight
+ {
+   background-color: $color-brand-main1;
+ }
+
+ .content-module--dark
+ {
+   background-color: $color-brand-main4;
+ }

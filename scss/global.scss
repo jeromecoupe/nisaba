@@ -9,15 +9,19 @@
 @import "base/_base.scss";
 @import "base/_typography.scss";
 
-@import "layout/_grid.scss";
-@import "layout/_main.scss";
-@import "layout/_header.scss";
 @import "layout/_footer.scss";
+@import "layout/_grid.scss";
+@import "layout/_header.scss";
+@import "layout/_main.scss";
 
 @import "components/_banners.scss";
+@import "components/_box.scss";
+@import "components/_bulletblocks.scss";
 @import "components/_buttons.scss";
-@import "components/_media.scss";
+@import "components/_checklist.scss";
+@import "components/_datalist.scss";
 @import "components/_introblocks.scss";
 @import "components/_iconblocks.scss";
+@import "components/_media.scss";
+@import "components/_testimonials.scss";
 @import "components/_txtcolumns.scss";
-@import "components/_datalist.scss";

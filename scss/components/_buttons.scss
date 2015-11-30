@@ -16,7 +16,7 @@
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  color: $color-brand-main4;
+  color: $color-neutral8;
 
   transition: background-color 0.2s ease-in-out,
               color            0.2s ease-in-out,
@@ -24,7 +24,7 @@
 
   &:hover
   {
-    color: $color-brand-main4;
+    color: $color-neutral8;
     border-color: $color-brand-alt3;
   }
 

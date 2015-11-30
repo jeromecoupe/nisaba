@@ -77,12 +77,12 @@ html
   font-weight: 400;
   font-family: $fontstack-main;
   @include rem-size(18);
-  color: $color-brand-alt3;
+  color: $color-neutral7;
 }
 
 .intro--light
 {
-  color: mix(#fff, $color-brand-alt3, 70%);
+  color: mix(#fff, $color-neutral6, 40%);
 }
 
 .text-light

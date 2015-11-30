@@ -1,0 +1,46 @@
+// -------------------------------------
+// =advantage
+// -------------------------------------
+
+.advantage
+{
+  margin-bottom: 1em;
+}
+
+.advantage__body:before
+{
+  display: block;
+  margin-bottom: 0.25em;
+  content: "";
+
+  font-family: $fontstack-alt;
+  font-weight: 400;
+  line-height: 1;
+  @include rem-size(36 );
+  color: $color-brand-accent3;
+
+  @include mq(medium)
+  {
+    @include rem-size(48);
+  }
+
+  @include mq(large)
+  {
+    @include rem-size(64);
+  }
+}
+
+.advantage__body--1:before
+{
+  content: "01";
+}
+
+.advantage__body--2:before
+{
+  content: "02";
+}
+
+.advantage__body--3:before
+{
+  content: "03";
+}

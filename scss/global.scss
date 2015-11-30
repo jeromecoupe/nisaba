@@ -1,6 +1,9 @@
 @import "utils/_variables.scss";
 @import "utils/_mixins.scss";
 @import "utils/_functions.scss";
+
+@import "vendors/_normalize.scss";
+
 @import "utils/_helpers-align.scss";
 @import "utils/_helpers-clearfix.scss";
 @import "utils/_helpers-hide.scss";
@@ -22,8 +25,10 @@
 @import "components/_buttons.scss";
 @import "components/_checklist.scss";
 @import "components/_datalist.scss";
+@import "components/_forms.scss";
 @import "components/_introblocks.scss";
 @import "components/_iconblocks.scss";
+@import "components/_links.scss";
 @import "components/_media.scss";
 @import "components/_questions-answers.scss";
 @import "components/_testimonials.scss";

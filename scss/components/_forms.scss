@@ -1,0 +1,49 @@
+// -------------------------------------
+// =forms
+// -------------------------------------
+
+.field
+{
+  margin-bottom: 2em;
+}
+
+.field__label
+{
+  display: block;
+  margin-bottom: 0.15em;
+}
+
+.field__label--mandatory:after
+{
+  content: " *";
+  display: inline;
+  color: $color-brand-accent3;
+  font-weight: bold;
+}
+
+.field__error
+{
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+
+  @include rem-size(16);
+  color: $color-brand-warning;
+}
+
+.textfield
+{
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid $color-brand-alt1;
+  border-radius: 0.2em;
+  padding: 0.75em 0.5em;
+
+  @include rem-size(16);
+
+  &:focus
+  {
+    outline: none;
+    box-shadow: 0 0 15px rgba(14,132,161,0.2);
+    background: #fff;
+  }
+}

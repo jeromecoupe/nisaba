@@ -77,7 +77,7 @@ html
   font-weight: 400;
   font-family: $fontstack-main;
   @include rem-size(18);
-  color: $color-neutral7;
+  color: mix(#000, $color-neutral6, 30%);
 }
 
 .intro--light

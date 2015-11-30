@@ -1,0 +1,21 @@
+// -------------------------------------
+// =media object
+// -------------------------------------
+
+$mediaobject-margin: 20px !default;
+
+.mediaobject
+{
+  @extend %clearfix;
+}
+
+.mediaobject__img
+{
+  float: left;
+  margin-right: $mediaobject-margin;
+}
+
+.mediaobject__body
+{
+  overflow: hidden;
+}

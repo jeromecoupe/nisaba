@@ -36,61 +36,65 @@
 
 .pagecontent
 {
-  padding: 1px 0;
   background: url(../img/bkg_gradient_large.png) top left repeat-x;
 }
 
 .content-module
 {
-  margin-top: calc-em(60);
-  margin-bottom: calc-em(60);
+  padding-top: calc-em(60);
+  padding-bottom: calc-em(60);
 
   @include mq(medium)
   {
-    margin-top: calc-em(80);
-    margin-bottom: calc-em(80);
+    padding-top: calc-em(80);
+    padding-bottom: calc-em(80);
   }
 
   @include mq(large)
   {
-    margin-top: calc-em(120);
-    margin-bottom: calc-em(120);
+    padding-top: calc-em(100);
+    padding-bottom: calc-em(100);
   }
 }
 
 /**
- * padded variation
+ * no-padding-bottom variation (home)
  */
 
- .content-module--padded
- {
-   padding-top: calc-em(60);
-   padding-bottom: calc-em(60);
+.content-module--nobottom
+{
+  padding-bottom: 0;
 
-   @include mq(medium)
-   {
-     padding-top: calc-em(80);
-     padding-bottom: calc-em(80);
-   }
+  @include mq(medium)
+  {
+    padding-bottom: 0;
+  }
 
-   @include mq(large)
-   {
-     padding-top: calc-em(120);
-     padding-bottom: calc-em(120);
-   }
- }
+  @include mq(large)
+  {
+    padding-bottom: 0;
+  }
+}
 
+/**
+ * border variation
+ */
+
+.content-module--border
+{
+  border-top: 1px solid $color-neutral2;
+}
 
 /**
  * color variations
  */
 
- .content-module--highlight
- {
-   background-color: $color-brand-main1;
- }
+.content-module--highlight
+{
+  background-color: $color-brand-main1;
+}
 
- .content-module--dark
- {
-   background-color: $color-brand-main4;
- }
+.content-module--dark
+{
+  background-color: $color-brand-main4;
+}

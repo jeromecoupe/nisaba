@@ -8,12 +8,12 @@
 
   @include mq(medium)
   {
-    padding: 3em 0;
+    padding: 2.5em 0;
   }
 
   @include mq(large)
   {
-    padding: 4em 0;
+    padding: 3em 0;
   }
 }
 

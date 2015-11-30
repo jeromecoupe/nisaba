@@ -1,17 +1,42 @@
 // -------------------------------------
-// =icon-block
+// =icon-block vertical
 // -------------------------------------
 
 /**
- * Simply an text with an icon on top
+ * Text with an icon on top
  */
 
-.iconblock
+.iconblock-v
 {
- margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
-.iconblock__img
+.iconblock-v__img
 {
- margin-bottom: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+// -------------------------------------
+// =icon-block horizontal
+// -------------------------------------
+
+/**
+ * Text with an icon on the left (media object)
+ */
+
+.iconblock-h
+{
+  @extend %clearfix;
+  margin-bottom: 0.5em;
+}
+
+.iconblock-h__img
+{
+  float: left;
+  margin-right: 20px;
+}
+
+.iconblock-h__body
+{
+  overflow: hidden;
 }

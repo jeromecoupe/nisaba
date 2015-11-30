@@ -4,8 +4,8 @@
 
 $grid-columns: 12;
 
-//$grid-pushclasses: true;
-//$grid-pullclasses: true;
+$grid-pushclasses: true;
+$grid-pullclasses: true;
 
 // 500 / 750 / 1024 / 1140 / 1500
 $breakpoints-list: (

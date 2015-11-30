@@ -9,3 +9,13 @@
     margin-right: 40%;
   }
 }
+
+.introblock--center
+{
+  @include mq(medium)
+  {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}

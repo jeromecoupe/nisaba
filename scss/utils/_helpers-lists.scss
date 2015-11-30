@@ -9,3 +9,44 @@
   margin: 0;
   padding: 0;
 }
+
+// -------------------------------------
+// =no markers
+// -------------------------------------
+
+.list-nomarkers,
+%list-nomarkers
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
+
+// -------------------------------------
+// =delimited
+// -------------------------------------
+
+.list-delimited
+{
+  @extend %list-nomarkers;
+
+  & > li
+  {
+    padding: 1em 0;
+    border-bottom: 1px solid $color-neutral2;
+    margin-bottom: 1em;
+
+    &:first-child
+    {
+      padding-top: 0;
+    }
+
+    &:last-child
+    {
+      padding-bottom: 0;
+      border: none;
+      margin-bottom: 0;
+    }
+  }
+}

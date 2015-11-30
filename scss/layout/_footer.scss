@@ -80,6 +80,7 @@
   &:hover
   {
     color: $color-brand-main2;
+    text-decoration: none;
   }
 
   @include mq(medium)

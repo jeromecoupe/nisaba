@@ -2,7 +2,8 @@
 // =buttons
 // -------------------------------------
 
-.button
+.button,
+.formbutton
 {
   display: block;
   padding: 1.5em 2.75em;
@@ -50,7 +51,8 @@
  * Color variations
  */
 
-.button--cta
+.button--cta,
+.formbutton
 {
   border-color: $color-brand-main3;
   background-color: $color-brand-main3;

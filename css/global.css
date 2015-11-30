@@ -1506,7 +1506,8 @@ html {
   .button:hover,
   .formbutton:hover {
     color: #222222;
-    border-color: #0C5C7A; }
+    border-color: #0C5C7A;
+    text-decoration: none; }
   @media all and (min-width: 31.25em) {
     .button,
     .formbutton {

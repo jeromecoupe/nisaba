@@ -1,7 +1,7 @@
-<svg class="navbutton" width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+<svg class="icon-mainnav  js-navicon" width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
     <title>Artboard 16</title>
     <desc>Created with Sketch.</desc>
-    <rect class="navbutton__top" x="1" y="1" width="20" height="3"></rect>
-    <rect class="navbutton__middle" x="1" y="6" width="20" height="3"></rect>
-    <rect class="navbutton__bottom" x="1" y="11" width="20" height="3"></rect>
+    <rect class="icon-mainnav__top" x="1" y="1" width="20" height="3"></rect>
+    <rect class="icon-mainnav__middle" x="1" y="6" width="20" height="3"></rect>
+    <rect class="icon-mainnav__bottom" x="1" y="11" width="20" height="3"></rect>
 </svg>

@@ -12,7 +12,6 @@ var myNavigation = ( function() {
 
       docBody = document.querySelector('body');
       navButton = document.querySelector('.js-navbutton');
-      docBody.classList.add('js-nav-hidden');
       menuState = 'hidden';
 
       _attachEvents();

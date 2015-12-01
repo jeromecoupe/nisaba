@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
-    <title>icon_scale</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="graphical_chart" sketch:type="MSArtboardGroup" transform="translate(-4000.000000, -400.000000)">
-            <g id="Oval-4-+-Oval-157-+-Oval-156" sketch:type="MSLayerGroup" transform="translate(4000.000000, 400.000000)" fill="#0E84A1">
-                <circle id="Oval-4" sketch:type="MSShapeGroup" cx="40" cy="40" r="40"></circle>
-            </g>
-            <path d="M4041,425 L4041,423 L4039,423 L4039,425 L4024,425 L4024,427 L4039,427 L4039,455 L4041,455 L4041,427 L4056,427 L4056,425 L4041,425 Z M4033,455 L4047,455 L4047,457 L4033,457 L4033,455 Z M4026,446.75 L4026,446.75 C4029.24007,446.75 4031.86667,444.735281 4031.86667,442.25 L4020.13333,442.25 C4020.13333,444.735281 4022.75993,446.75 4026,446.75 L4026,446.75 Z M4018,441.8 L4018,440 L4034,440 L4034,441.8 C4034,445.843324 4030.36268,449 4026,449 C4021.63732,449 4018,445.843324 4018,441.8 Z M4021.61011,440 L4025.91897,429.932098 L4030.24542,440 L4032.40677,440 L4026.83829,427 L4025,427 L4019.45262,440 L4021.61011,440 Z M4054,446.75 L4054,446.75 C4057.24007,446.75 4059.86667,444.735281 4059.86667,442.25 L4048.13333,442.25 C4048.13333,444.735281 4050.75993,446.75 4054,446.75 L4054,446.75 Z M4046,441.8 L4046,440 L4062,440 L4062,441.8 C4062,445.843324 4058.36268,449 4054,449 C4049.63732,449 4046,445.843324 4046,441.8 Z M4049.61011,440 L4053.91897,429.932098 L4058.24542,440 L4060.40677,440 L4054.83829,427 L4053,427 L4047.45262,440 L4049.61011,440 Z" id="Rectangle-555" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><title>icon_scale</title><g fill="none" fill-rule="evenodd"><circle cx="40" cy="40" r="40" fill="#0E84A1"/><path d="M41 25v-2h-2v2H24v2h15v28h2V27h15v-2H41zm-8 30h14v2H33v-2zm-7-8.25c3.24 0 5.867-2.015 5.867-4.5H20.133c0 2.485 2.627 4.5 5.867 4.5zm-8-4.95V40h16v1.8c0 4.043-3.637 7.2-8 7.2-4.363 0-8-3.157-8-7.2zm3.61-1.8l4.31-10.068L30.244 40h2.162l-5.57-13H25l-5.547 13h2.157zM54 46.75c3.24 0 5.867-2.015 5.867-4.5H48.133c0 2.485 2.627 4.5 5.867 4.5zm-8-4.95V40h16v1.8c0 4.043-3.637 7.2-8 7.2-4.363 0-8-3.157-8-7.2zm3.61-1.8l4.31-10.068L58.244 40h2.162l-5.57-13H53l-5.547 13h2.157z" fill="#FFF"/></g></svg>

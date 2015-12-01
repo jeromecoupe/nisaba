@@ -174,7 +174,7 @@
 }
 
 // -------------------------------------
-// =visibility (default)
+// =nav visibility (default)
 // -------------------------------------
 
 .headernav
@@ -219,5 +219,130 @@
   {
     //magic number: has to be equal to the height of the menu
     max-height: 12.75em;
+  }
+}
+
+
+// -------------------------------------
+// =icon animations
+// -------------------------------------
+
+
+@keyframes closeTop
+{
+  0%
+  {
+    transform: translate3d(0,0,0)
+               rotate(0);
+  }
+  49%
+  {
+    transform: translate3d(0,5px,0)
+               rotate(0);
+  }
+  100%
+  {
+    transform: translate3d(0,5px,0)
+               rotate(45deg);
+  }
+}
+
+@keyframes openTop
+{
+  0%
+  {
+    transform: translate3d(0,5px,0)
+               rotate(45deg);
+  }
+  49%
+  {
+    transform: translate3d(0,5px,0)
+               rotate(0);
+  }
+  100%
+  {
+    transform: translate3d(0,0,0)
+               rotate(0);
+  }
+}
+
+@keyframes closeBottom
+{
+  0%
+  {
+    transform: translate3d(0,0,0)
+               rotate(0);
+  }
+  49%
+  {
+    transform: translate3d(0,-5px,0)
+               rotate(0);
+  }
+  100%
+  {
+    transform: translate3d(0,-5px,0)
+               rotate(-45deg);
+  }
+}
+
+@keyframes openBottom
+{
+  0%
+  {
+    transform: translate3d(0,-5px,0)
+               rotate(-45deg);
+  }
+  49%
+  {
+    transform: translate3d(0,-5px,0)
+               rotate(0);
+  }
+  100%
+  {
+    transform: translate3d(0,0,0)
+               rotate(0);
+  }
+}
+
+.navbutton__top, .navbutton__bottom
+{
+  transform-origin: 50% 50%;
+}
+
+.js-nav-visible
+{
+  .navbutton__top
+  {
+    animation: 0.25s closeTop forwards;
+  }
+
+  .navbutton__middle
+  {
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+
+  .navbutton__bottom
+  {
+    animation: 0.25s closeBottom forwards;
+  }
+}
+
+.js-nav-hidden
+{
+  .navbutton__top
+  {
+    animation: 0.25s openTop both;
+  }
+
+  .navbutton__middle
+  {
+    transition: all 0.25s ease-in-out;
+    opacity: 1;
+  }
+
+  .navbutton__bottom
+  {
+    animation: 0.25s openBottom both;
   }
 }

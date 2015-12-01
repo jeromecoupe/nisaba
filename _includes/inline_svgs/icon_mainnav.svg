@@ -1,7 +1,7 @@
-<svg class="icon-nav" width="20px" height="15px" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
-    <title>Icon Main Navigation</title>
-    <desc>Click to activate navigation</desc>
-    <rect class="icon-nav__top" x="0" y="0" width="20" height="3" fill="#043140"></rect>
-    <rect class="icon-nav__middle" x="0" y="6" width="20" height="3" fill="#043140"></rect>
-    <rect class="icon-nav__bottom" x="0" y="12" width="20" height="3" fill="#043140"></rect>
+<svg class="navbutton" width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+    <title>Artboard 16</title>
+    <desc>Created with Sketch.</desc>
+    <rect class="navbutton__top" x="1" y="1" width="20" height="3"></rect>
+    <rect class="navbutton__middle" x="1" y="6" width="20" height="3"></rect>
+    <rect class="navbutton__bottom" x="1" y="11" width="20" height="3"></rect>
 </svg>

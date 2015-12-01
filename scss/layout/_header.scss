@@ -304,45 +304,45 @@
   }
 }
 
-.navbutton__top, .navbutton__bottom
+.icon-mainnav__top, .icon-mainnav__bottom
 {
   transform-origin: 50% 50%;
 }
 
-.js-nav-visible
+.js-is-closed
 {
-  .navbutton__top
+  .icon-mainnav__top
   {
     animation: 0.25s closeTop forwards;
   }
 
-  .navbutton__middle
+  .icon-mainnav__middle
   {
     transition: all 0.25s ease-in-out;
     opacity: 0;
   }
 
-  .navbutton__bottom
+  .icon-mainnav__bottom
   {
     animation: 0.25s closeBottom forwards;
   }
 }
 
-.js-nav-hidden
+.js-is-open
 {
-  .navbutton__top
+  .icon-mainnav__top
   {
-    animation: 0.25s openTop both;
+    animation: 0.25s openTop forwards;
   }
 
-  .navbutton__middle
+  .icon-mainnav__middle
   {
     transition: all 0.25s ease-in-out;
     opacity: 1;
   }
 
-  .navbutton__bottom
+  .icon-mainnav__bottom
   {
-    animation: 0.25s openBottom both;
+    animation: 0.25s openBottom forwards;
   }
 }

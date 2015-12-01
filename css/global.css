@@ -1303,28 +1303,28 @@ html {
   100% {
     transform: translate3d(0, 0, 0) rotate(0); } }
 
-.navbutton__top, .navbutton__bottom {
+.icon-mainnav__top, .icon-mainnav__bottom {
   transform-origin: 50% 50%; }
 
-.js-nav-visible .navbutton__top {
+.js-is-closed .icon-mainnav__top {
   animation: 0.25s closeTop forwards; }
 
-.js-nav-visible .navbutton__middle {
+.js-is-closed .icon-mainnav__middle {
   transition: all 0.25s ease-in-out;
   opacity: 0; }
 
-.js-nav-visible .navbutton__bottom {
+.js-is-closed .icon-mainnav__bottom {
   animation: 0.25s closeBottom forwards; }
 
-.js-nav-hidden .navbutton__top {
-  animation: 0.25s openTop both; }
+.js-is-open .icon-mainnav__top {
+  animation: 0.25s openTop forwards; }
 
-.js-nav-hidden .navbutton__middle {
+.js-is-open .icon-mainnav__middle {
   transition: all 0.25s ease-in-out;
   opacity: 1; }
 
-.js-nav-hidden .navbutton__bottom {
-  animation: 0.25s openBottom both; }
+.js-is-open .icon-mainnav__bottom {
+  animation: 0.25s openBottom forwards; }
 
 /**
  * Layout in horizontal slices in a "page"

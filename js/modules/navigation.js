@@ -3,7 +3,8 @@ var myNavigation = ( function() {
   'use strict';
 
   var docBody;
-  var navButton;
+  var navLink;
+  var navIcon;
   var menuState;
 
   var init = function() {
@@ -11,7 +12,9 @@ var myNavigation = ( function() {
     if ( _cutMustard() ) {
 
       docBody = document.querySelector('body');
-      navButton = document.querySelector('.js-navbutton');
+      navLink = document.querySelector('.js-navlink');
+      navIcon = document.querySelector('.js-navicon');
+      docBody.classList.add('js-nav-hidden');
       menuState = 'hidden';
 
       _attachEvents();
@@ -30,7 +33,7 @@ var myNavigation = ( function() {
 
   var _attachEvents = function() {
 
-    navButton.addEventListener('click', function(el){
+    navLink.addEventListener('click', function(el){
 
       el.preventDefault();
       _swapClasses();
@@ -43,13 +46,25 @@ var myNavigation = ( function() {
 
     if (menuState === 'hidden')
     {
+
       docBody.classList.remove('js-nav-hidden');
       docBody.classList.add('js-nav-visible');
+
+      navIcon.classList.remove('js-is-open');
+      navIcon.classList.add('js-is-closed');
+
       menuState = 'visible';
+
     } else {
+
       docBody.classList.remove('js-nav-visible');
       docBody.classList.add('js-nav-hidden');
+
+      navIcon.classList.remove('js-is-closed');
+      navIcon.classList.add('js-is-open');
+
       menuState = 'hidden';
+
     }
 
   };

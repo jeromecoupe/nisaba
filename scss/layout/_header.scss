@@ -100,6 +100,11 @@
   }
 }
 
+.headernav__item--current > a, .headernav__item--current > a:hover
+{
+  color: $color-brand-main2;
+}
+
 // =medium and large screens
 // -------------------------------------
 

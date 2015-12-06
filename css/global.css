@@ -1210,6 +1210,9 @@ html {
     color: #969BA0;
     text-decoration: none; }
 
+.headernav__item--current > a, .headernav__item--current > a:hover {
+  color: #15AAC4; }
+
 @media all and (min-width: 47.5em) {
   .headernav {
     float: right;

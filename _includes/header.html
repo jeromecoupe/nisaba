@@ -7,10 +7,10 @@
 
     <nav>
       <ul class="headernav">
-        <li class="headernav__item"><a href="/about.html">A propos</a></li><!--
-     --><li class="headernav__item"><a href="/notaires.html">Notaires</a></li><!--
-     --><li class="headernav__item"><a href="/collaborateurs.html">Collaborateurs</a></li><!--
-     --><li class="headernav__item  headernav__item--contact"><a href="/contact.html">Contact</a></li>
+        <li class="headernav__item{% if page.navCurrent == 'about' %}  headernav__item--current{% endif %}"><a href="/about.html">A propos</a></li><!--
+     --><li class="headernav__item{% if page.navCurrent == 'notaires' %}  headernav__item--current{% endif %}"><a href="/notaires.html">Notaires</a></li><!--
+     --><li class="headernav__item{% if page.navCurrent == 'collaborateurs' %}  headernav__item--current{% endif %}"><a href="/collaborateurs.html">Collaborateurs</a></li><!--
+     --><li class="headernav__item{% if page.navCurrent == 'contact' %}  headernav__item--current{% endif %}  headernav__item--contact"><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
 

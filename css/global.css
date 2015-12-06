@@ -1352,7 +1352,13 @@ html {
   max-width: 920px; }
 
 .pagecontent {
-  background: url(../img/bkg_gradient_large.png) top left repeat-x; }
+  background: url(../img/bkg_gradient_small.png) top left repeat-x; }
+  @media all and (min-width: 47.5em) {
+    .pagecontent {
+      background: url(../img/bkg_gradient_medium.png) top left repeat-x; } }
+  @media all and (min-width: 64em) {
+    .pagecontent {
+      background: url(../img/bkg_gradient_large.png) top left repeat-x; } }
 
 .content-module {
   padding-top: 3.75em;
@@ -1483,12 +1489,12 @@ html {
     position: relative;
     top: 120px;
     width: calc(50% - 1rem);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     /* avoid being to close to text underneath */ } }
 
-@media all and (min-width: 47.5em) {
+@media all and (min-width: 64em) {
   .banner--about__picture {
-    margin-bottom: 0; } }
+    margin-bottom: 20px; } }
 
 .banner--about__picture > img {
   display: block; }

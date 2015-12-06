@@ -87,12 +87,12 @@
     position: relative;
     top: 120px;
     width: calc(50% - 1rem);
-    margin-bottom: 20px; /* avoid being to close to text underneath */
+    margin-bottom: 40px; /* avoid being to close to text underneath */
   }
 
-  @include mq(medium)
+  @include mq(large)
   {
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 
   & > img

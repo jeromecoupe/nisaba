@@ -36,7 +36,17 @@
 
 .pagecontent
 {
-  background: url(../img/bkg_gradient_large.png) top left repeat-x;
+  background: url(../img/bkg_gradient_small.png) top left repeat-x;
+
+  @include mq(medium)
+  {
+    background: url(../img/bkg_gradient_medium.png) top left repeat-x;
+  }
+
+  @include mq(large)
+  {
+    background: url(../img/bkg_gradient_large.png) top left repeat-x;
+  }
 }
 
 .content-module

@@ -1,0 +1,6 @@
+{
+  "strict": true,
+  "undef": true,
+  "eqeqeq": true,
+  "latedef": true
+}

@@ -73,16 +73,16 @@ gulp.task('css', function() {
 
 // Lint JS task
 gulp.task('jslint', function() {
-	return gulp.src('./js/modules/**/*.js')
+	gulp.src('./js/modules/**/*.js')
 	.pipe(jshint())
-	.pipe(jshint.reporter('default'))
+	.pipe(jshint.reporter('default', { verbose: true }))
 	.pipe(jshint.reporter('fail'))
 	.pipe(notify({ message: 'Lint task done' }));
 });
 
 //Concatenate and Minify JS task
-gulp.task('scripts', function() {
-	return gulp.src(['./js/modules/**/*.js','./js/vendors/svg4everybody.min.js'])
+gulp.task('scripts', ['jslint'], function() {
+	return gulp.src(['./js/modules/**/*.js'])
 	.pipe(concat('nisaba.js'))
 	.pipe(gulp.dest('./js/'))
 	.pipe(gulp.dest('./_site/js/'))
@@ -105,7 +105,7 @@ gulp.task('svgsprite', function () {
 });
 
 // Jekyll build
-gulp.task('jekyll-build', ['css', 'jslint', 'scripts'], function (done) {
+gulp.task('jekyll-build', ['css', 'scripts'], function (done) {
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 })
@@ -118,11 +118,11 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 // Watch task
 gulp.task('watch', ['browser-sync'], function () {
 	gulp.watch('./scss/**/*', ['css']);
-	gulp.watch('./js/modules/**/*', ['jslint', 'scripts']);
+	gulp.watch('./js/modules/**/*', ['scripts']);
 	gulp.watch(['_includes/**/*','_layouts/**/*','./*.html'], ['jekyll-rebuild']);
 });
 
 // Tasks
-gulp.task('default', ['css', 'jslint', 'scripts', 'jekyll-rebuild']);
+gulp.task('default', ['css', 'scripts', 'jekyll-rebuild']);
 gulp.task('images', ['img']);
 gulp.task('svg', ['svgsprite']);
